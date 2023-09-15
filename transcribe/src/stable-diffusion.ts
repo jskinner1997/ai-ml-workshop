@@ -2,20 +2,20 @@ import axios from "axios";
 export const generateImage = async (textPrompt: string) => {
     const url = "https://stablediffusionapi.com/api/v3/text2img";
     const raw = {
-        "key": "Ef5oSsfaztfGPQioolnLc3DFbVvrhLeu5zhlWC9naYuy0hIUlUMTOUcjC3CA",
+        "key": "BAPbWEsrureJo1qCqYSqloBpubH15Gz1OgcLBLC5K01kBf9fh6gEX1dDIIgh",
         "prompt": textPrompt,
         "negative_prompt": "",
-        "width": 1024,
-        "height": 1024,
-        "samples": 4,
+        "width": 512,
+        "height": 512,
+        "samples": 1,
         "num_inference_steps": 20,
         "seed": null,
         "guidance_scale": 8,
-        "safety_checker": "no",
+        "safety_checker": "yes",
         "multi_lingual": "no",
         "panorama": "no",
         "self_attention": "no",
-        "upscale": "no",
+        "upscale": "yes",
         "embeddings_model": null,
         "webhook": null,
         "track_id": null
@@ -43,7 +43,7 @@ export const generateImage = async (textPrompt: string) => {
 export const fetchImage = async (requestId: number) => {
     const url = "https://stablediffusionapi.com/api/v4/dreambooth/fetch";
     const raw = {
-        "key": "Ef5oSsfaztfGPQioolnLc3DFbVvrhLeu5zhlWC9naYuy0hIUlUMTOUcjC3CA",
+        "key": "BAPbWEsrureJo1qCqYSqloBpubH15Gz1OgcLBLC5K01kBf9fh6gEX1dDIIgh",
         "request_id": requestId
     }
     const requestOptions = {

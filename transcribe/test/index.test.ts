@@ -21,6 +21,6 @@ describe('Transcription Test', ()=>{
     }, 360000)
 
     test('fetch image', async () => {
-        const results = await fetchImage(42730656);
+        const results = await fetchImage(42764798);
     })
 })
