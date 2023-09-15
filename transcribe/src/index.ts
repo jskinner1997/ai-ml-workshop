@@ -37,15 +37,14 @@ export const startRequest = async () => {
                     console.log(transcript)
                 });
             });
-
         }
     }
 }
 
 
 (() => {
-    askLlama("Can you generate an image prompt from the following text:" +
-        " I've rented a car in Las Vegas and have reserved a hotel in Twentynine Palms which is just north of Joshua Tree. We'll drive from Las Vegas through Mojave National Preserve and possibly do a short hike on our way down. Then spend all day on Monday at Joshua Tree. We can decide the next morning if we want to do more in Joshua Tree or Mojave before we head back.")
+    askLlama("Can you generate an image prompt from the following text: " +
+        "October arrived, spreading a damp chill over the grounds and into the castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of colds among the staff and students. Her Pepperup potion worked instantly, though it left the drinker smoking at the ears for several hours afterward. Ginny Weasley, who had been looking pale, was bullied into taking some by Percy. The steam pouring from under her vivid hair gave the impression that her whole head was on fire.")
         .then(async r => {
             console.log(r)
             await generateImage(r!);

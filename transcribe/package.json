@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-transcribe-streaming": "^3.409.0",
-    "axios": "^1.5.0"
+    "axios": "^1.5.0",
+    "replicate": "^0.18.0"
   }
 }
