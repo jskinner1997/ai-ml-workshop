@@ -1,12 +1,15 @@
 import {TranscribeStreamingClient, StartStreamTranscriptionCommand} from "@aws-sdk/client-transcribe-streaming";
 import {createReadStream} from "fs";
 import {join} from "path";
+import {generateImage} from "./stable-diffusion";
+import {askLlama} from "./replicate";
 
 const audio = createReadStream(join(__dirname, "..", "resources", "input.flac"), {highWaterMark: 1024 * 10});
 
 const LanguageCode = "en-US";
 const MediaEncoding = "flac";
 const MediaSampleRateHertz = 8000;
+
 
 export const startRequest = async () => {
     const client = new TranscribeStreamingClient({});
@@ -40,3 +43,6 @@ export const startRequest = async () => {
 }
 
 
+(() => {
+    askLlama("can you generate an image prompt").then(r => console.log(r))
+})()
